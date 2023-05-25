@@ -32,6 +32,6 @@ uma linha “Z” aparece outra linha “Z”.<br/>
 
 <h3>Linha Y:</h3><br/>
 •	Traz dados da matricula do aluno (curso)<br/>
-•	Sintaxe: Y-[matricula]-[código do curso]-[nome do curso]<br/>
+•	Sintaxe: Y-[matricula]-[código do curso]-[nome do curso]<br/><br/>
 
 <img src = "/img/Captura de tela 2023-05-25 195432.png">
