@@ -4,14 +4,17 @@ namespace DesafioWinForms01
 {
     public partial class Form1 : Form
     {
+        DateTime time;
+        List<Pessoa> pessoas = new List<Pessoa>();
+        List<Aluno> alunos = new List<Aluno>();
+        List<Curso> cursos = new List<Curso>();
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        List<Pessoa> pessoas = new List<Pessoa>();
-        List<Aluno> alunos = new List<Aluno>();
-        List<Curso> cursos = new List<Curso>();
+
 
         private void buscarArquivo(object sender, EventArgs e)
         {
@@ -51,6 +54,22 @@ namespace DesafioWinForms01
         }
 
         private void gridAlunos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            time = DateTime.Now;
+            label2.Text = time.ToLocalTime().ToString();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
