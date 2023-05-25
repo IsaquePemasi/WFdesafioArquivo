@@ -1,5 +1,5 @@
 <h1>DESAFIO #1</h1>
-Passos:
+<h2>Passos: </h2> <br/>
 •	Crie a classe Pessoa
 •	Crie a classe Aluno
 •	Outras classes se necessário
