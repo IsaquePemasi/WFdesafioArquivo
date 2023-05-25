@@ -6,19 +6,18 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace DesafioWinForms01
+namespace WFdesafioArquivo
 {
-    internal class Conector
+    internal class Criador
     {
-
         /// <summary>
-        /// Método da Classe Conector, cria Alunos, Pessoas e Cursos e popula a lista de pessoas e alunos
+        /// Método da Classe Criador, cria Alunos, Pessoas e Cursos e popula a lista de pessoas e alunos
         /// </summary>
         /// <param name="listaDePessoas"></param>
         /// <param name="listaDeAlunos"></param>
         public static void carregarDados(List<Pessoa> listaDePessoas, List<Aluno> listaDeAlunos, List<Curso> listDeCursos, string caminhoDoArquivo)
         {
-            List<string> dados = DataBase.realizarLeituraDoArquivo(caminhoDoArquivo);
+            List<string> dados = Persitencia.leituraDoArquivo(caminhoDoArquivo);
 
             try
             {
@@ -38,7 +37,6 @@ namespace DesafioWinForms01
                     }
                     else if (item.StartsWith("Y"))
                     {
-
                         string[] vetorCurso = item.Split("-");
                         curso = new Curso(vetorCurso[2], vetorCurso[3]);
                         aluno = new Aluno(listaDePessoas.Last().Nome, listaDePessoas.Last().Telefone, listaDePessoas.Last().Cidade, listaDePessoas.Last().Rg, listaDePessoas.Last().Cpf, vetorCurso[1], curso);
@@ -53,18 +51,7 @@ namespace DesafioWinForms01
                 MessageBox.Show("Falha ao ler o arquivo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
-
         }
-
-        private static string formatarTelefone(string telefone)
-        {
-            string padrao = @"(\d{2})(\d{4,5})(\d{4})";
-            string formato = "($1) $2-$3";
-
-            string numeroFormatado = Regex.Replace(telefone, padrao, formato);
-            return numeroFormatado;
-        }
-
         public static string formatarRG(string rg)
         {
             string padrao = @"(\d{2})(\d{3})(\d{3})(\d{1})";
@@ -81,6 +68,14 @@ namespace DesafioWinForms01
 
             string cpfFormatado = Regex.Replace(cpf, padrao, formato);
             return cpfFormatado;
+        }
+        public static string formatarTelefone(string telefone)
+        {
+            string padrao = @"(\d{2})(\d{4,5})(\d{4})";
+            string formato = "($1) $2-$3";
+
+            string numeroFormatado = Regex.Replace(telefone, padrao, formato);
+            return numeroFormatado;
         }
 
     }

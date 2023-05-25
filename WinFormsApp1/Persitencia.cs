@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioWinForms01
+namespace WFdesafioArquivo
 {
-    internal class DataBase
+    internal class Persitencia
     {
 		/// <summary>
-		/// Método da classe DataBase, ler arquivo linha a linha e retorna uma lista do tipo string com os dados da leitura
+		/// Método da classe Persitencia, ler arquivo linha a linha e retorna uma lista do tipo string com os dados da leitura
 		/// </summary>
 		/// <param name="nomeDoArquivo"></param>
-        public static List<string> realizarLeituraDoArquivo(string nomeDoArquivo)
+        public static List<string> leituraDoArquivo(string nomeDoArquivo)
         {
 			try
 			{
@@ -30,7 +30,6 @@ namespace DesafioWinForms01
 			}
 			catch (Exception)
 			{
-
 				MessageBox.Show("Falha ao ler o arquivo","Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				throw;
 			}

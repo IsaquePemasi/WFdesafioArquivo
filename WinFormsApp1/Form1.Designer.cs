@@ -1,4 +1,4 @@
-﻿namespace DesafioWinForms01
+﻿namespace WFdesafioArquivo
 {
     partial class Form1
     {
@@ -74,7 +74,7 @@
             buttonBuscar.TabIndex = 0;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
-            buttonBuscar.Click += buscarArquivo;
+            buttonBuscar.Click += buscarArquivoDeTexto;
             // 
             // textBoxCaminhoArquivo
             // 
@@ -95,7 +95,7 @@
             tabControl.SelectedIndex = 0;
             tabControl.Size = new Size(661, 330);
             tabControl.TabIndex = 2;
-            tabControl.MouseClick += listarAlunos;
+            tabControl.MouseClick += listar;
             // 
             // tabPageAlunos
             // 

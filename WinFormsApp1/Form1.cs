@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace DesafioWinForms01
+namespace WFdesafioArquivo
 {
     public partial class Form1 : Form
     {
@@ -15,14 +15,19 @@ namespace DesafioWinForms01
         }
 
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            time = DateTime.Now;
+            label2.Text = time.ToLocalTime().ToString();
+        }
 
-        private void buscarArquivo(object sender, EventArgs e)
+        private void buscarArquivoDeTexto(object sender, EventArgs e)
         {
 
 
             if (dialogSearch.ShowDialog() == DialogResult.OK)
             {
-                Conector.carregarDados(pessoas, alunos, cursos, dialogSearch.FileName);
+                Criador.carregarDados(pessoas, alunos, cursos, dialogSearch.FileName);
                 MessageBox.Show($"Número de pessoas: {pessoas.Count()}\nNúmero de alunos: {alunos.Count()}");
 
                 alunos.ForEach(aluno =>
@@ -33,7 +38,7 @@ namespace DesafioWinForms01
             }
         }
 
-        private void listarAlunos(object sender, MouseEventArgs e)
+        private void listar(object sender, MouseEventArgs e)
         {
             if (pessoas.Count > 0)
             {
@@ -61,12 +66,6 @@ namespace DesafioWinForms01
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            time = DateTime.Now;
-            label2.Text = time.ToLocalTime().ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

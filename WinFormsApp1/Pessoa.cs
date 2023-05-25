@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioWinForms01
+namespace WFdesafioArquivo
 {
     internal class Pessoa
     {
-        private string _nome;
-        private string _telefone;
-        private string _cidade;
-        private string _rg;
-        private string _cpf;
+        public string Nome { get; set; }
+        public string Telefone { get; set; }
+        public string Cidade { get; set; }
+        public string Rg { get; set; }
+        public string Cpf { get; set; }
 
         public Pessoa()
         {
@@ -21,17 +21,11 @@ namespace DesafioWinForms01
 
         public Pessoa(string nome, string telefone, string cidade, string rg, string cpf)
         {
-            _nome = nome;
-            _telefone = telefone;
-            _cidade = cidade;
-            _rg = rg;
-            _cpf = cpf;
+            Nome = nome;
+            Telefone = telefone;
+            Cidade = cidade;
+            Rg = rg;
+            Cpf = cpf;
         }
-
-        public string Nome { get => _nome; set => _nome = value; }
-        public string Telefone { get => _telefone; set => _telefone = value; }
-        public string Cidade { get => _cidade; set => _cidade = value; }
-        public string Rg { get => _rg; set => _rg = value; }
-        public string Cpf { get => _cpf; set => _cpf = value; }
     }
 }
