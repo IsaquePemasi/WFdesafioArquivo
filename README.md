@@ -35,3 +35,5 @@ uma linha “Z” aparece outra linha “Z”.<br/>
 •	Sintaxe: Y-[matricula]-[código do curso]-[nome do curso]<br/><br/>
 
 <img src = "/img/Captura de tela 2023-05-25 195432.png">
+<h2 align="center">Autor</h2>
+<a href="https://github.com/IsaquePemasi/"><img src="https://avatars.githubusercontent.com/u/76749511?v=4" width=115></a>
